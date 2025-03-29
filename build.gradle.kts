@@ -2,7 +2,7 @@ import com.github.benmanes.gradle.versions.updates.*
 import com.vanniktech.maven.publish.SonatypeHost.Companion.CENTRAL_PORTAL
 
 plugins {
-    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.kotlin)
     alias(libs.plugins.version.catalog.update)
     alias(libs.plugins.ben.manes.versions)
     alias(libs.plugins.ktlint)
@@ -22,7 +22,7 @@ repositories {
 dependencies {
     api(libs.kotlinx.coroutines.core)
     api(libs.kotlinx.coroutines.slf4j)
-    api(libs.kotlin.logging.jvm)
+    api(libs.kotlin.logging)
     api(libs.kodepix.commons)
 
     testImplementation(libs.bundles.testing)
