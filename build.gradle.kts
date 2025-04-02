@@ -85,6 +85,12 @@ tasks {
     runKtlintCheckOverTestSourceSet { dependsOn(runKtlintFormatOverTestSourceSet) }
 }
 
+versionCatalogUpdate {
+    pin {
+        plugins.addAll(libs.plugins.version.catalog.update) // because nl.littlerobots.version-catalog-update:1.0.0 not updates libs versions
+    }
+}
+
 private fun isNonStable(version: String) = run {
     val versionIsStable = stableKeywords.any { version.uppercase().contains(it) }
     val isStable = versionIsStable || versionRegex.matches(version)
